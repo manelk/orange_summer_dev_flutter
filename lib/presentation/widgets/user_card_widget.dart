@@ -54,7 +54,7 @@ class UserCardWidget extends StatelessWidget {
 
             ElevatedButton(
               onPressed: () {
-                print("This button works !");
+                debugPrint("This button works !");
 
                 // setState(() {
                 //   imageUrl =
