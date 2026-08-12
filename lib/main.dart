@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app_test/presentation/screens/home_screen.dart';
+import 'package:my_app_test/presentation/screens/recipe_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const HomeScreen(),
+      home: const RecipeScreen(),
     );
   }
 }
