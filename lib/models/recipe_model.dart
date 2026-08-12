@@ -10,4 +10,11 @@ class RecipeModel {
     required this.rating,
     this.imageUrl,
   });
+
+  // transform data from json into our dart data
+  RecipeModel.fromJson(Map<String, dynamic> json)
+    : title = json['title'],
+      category = json['category'],
+      rating = json['rating'],
+      imageUrl = json['image_url'];
 }
