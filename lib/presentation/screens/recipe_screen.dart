@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app_test/data/recipes_data.dart';
+import 'package:my_app_test/presentation/widgets/recipe_widget.dart';
 
 class RecipeScreen extends StatelessWidget {
   const RecipeScreen({super.key});
@@ -12,20 +13,21 @@ class RecipeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text("Recipe app demo")),
-      body: ListView.builder(
-        padding: const EdgeInsets.all(8),
-        // we need to call our list
-        itemCount: recipesFakeData.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Column(
-            children: [
-              Text("Title: ${recipesFakeData[index].title}"),
-              Text("Category: ${recipesFakeData[index].category}"),
-              Text("Rating:  ${recipesFakeData[index].rating}"),
-              Image.network("${recipesFakeData[index].imageUrl}"),
-            ],
-          );
-        },
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView.builder(
+          padding: const EdgeInsets.all(10),
+          // we need to call our list
+          itemCount: recipesFakeData.length,
+          itemBuilder: (BuildContext context, int index) {
+            return RecipeWidget(
+              title: recipesFakeData[index].title,
+              rating: recipesFakeData[index].rating,
+              imageUrl: recipesFakeData[index].imageUrl,
+              category: recipesFakeData[index].category,
+            );
+          },
+        ),
       ),
     );
   }
